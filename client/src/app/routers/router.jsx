@@ -12,6 +12,9 @@ const Router = () => {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact>
+          <Redirect to="/store" />
+        </Route>
+        <Route path="/admin" exact>
           <Redirect to="/admin/view-orders" />
         </Route>
         <AdminLayoutRoute

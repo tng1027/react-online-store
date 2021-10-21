@@ -19,7 +19,7 @@ const Header = () => {
         active={activeItem === "admin"}
         onClick={handleItemClick}
       >
-        Store Management
+        <a href="/admin">Admin</a>
       </Menu.Item>
 
       <Menu.Item
@@ -27,7 +27,7 @@ const Header = () => {
         active={activeItem === "store"}
         onClick={handleItemClick}
       >
-        Store Browser
+        <a href="/store">Store</a>
       </Menu.Item>
 
       <Menu.Item name="sign-in" onClick={handleItemClick}>

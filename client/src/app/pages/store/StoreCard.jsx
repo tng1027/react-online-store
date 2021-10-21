@@ -1,20 +1,24 @@
+import { Link } from "react-router-dom"
 import { Card, Icon, Image } from "semantic-ui-react"
 
 const StoreCard = ({ store }) => {
-  const { image, name, id, brief } = store
-
+  const { image, name, id, brief, phoneNumber, location } = store
+  const link = `/store/${id}`
   return (
     <Card>
       <Image src={image} wrapped ui={false} />
       <Card.Content>
-        <Card.Header>{name}</Card.Header>
-        <Card.Meta>Joined in 2016</Card.Meta>
+        <Card.Header>
+          <a href={link}>{name}</a>
+        </Card.Header>
+        <Card.Meta>
+          <Icon name="map" /> {location}
+        </Card.Meta>
         <Card.Description>{brief}</Card.Description>
       </Card.Content>
       <Card.Content extra>
         <a>
-          <Icon name="user" />
-          10 Friends
+          <Icon name="phone"></Icon> {phoneNumber}
         </a>
       </Card.Content>
     </Card>
