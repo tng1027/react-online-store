@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom"
 import { Card, Icon, Image } from "semantic-ui-react"
 
 const StoreCard = ({ store }) => {
   const { image, name, id, brief, phoneNumber, location } = store
   const link = `/store/${id}`
+
   return (
     <Card>
       <Image src={image} wrapped ui={false} />

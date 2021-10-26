@@ -1,8 +1,8 @@
 import faker from "faker"
 import { useState } from "react"
-import StoreList from "./store/StoreList"
+import StoreList from "../components/StoreList"
 
-const StoreBrowser = () => {
+const DashboardGuest = () => {
   const generateStores = () => {
     const stores = []
     for (let i = 0; i < faker.datatype.number({ min: 10, max: 100 }); i++) {
@@ -34,4 +34,4 @@ const StoreBrowser = () => {
   )
 }
 
-export default StoreBrowser
+export default DashboardGuest

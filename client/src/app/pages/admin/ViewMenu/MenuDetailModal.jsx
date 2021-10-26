@@ -19,7 +19,7 @@ const MenuDetailModal = forwardRef((props, ref) => {
     },
   }))
 
-  const { id, image, name, price, description } = menu
+  const { image, name, price, description } = menu
 
   return (
     <Modal
@@ -30,7 +30,7 @@ const MenuDetailModal = forwardRef((props, ref) => {
     >
       <Modal.Header>Modify Menu</Modal.Header>
       <Modal.Content image>
-        <Image rounded fluid size="medium" src={image} wrapped />
+        <Image rounded fluid src={image} wrapped />
         <Modal.Description>
           <Form size={"small"}>
             <Form.Field>

@@ -33,7 +33,7 @@ const ModifyStoreModal = forwardRef((props, ref) => {
     >
       <Modal.Header>Modify Store</Modal.Header>
       <Modal.Content image>
-        <Image rounded fluid size="medium" src={image} wrapped />
+        <Image rounded fluid src={image} wrapped />
         <Modal.Description>
           <Form size={"small"}>
             <Form.Field>

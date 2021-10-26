@@ -75,7 +75,7 @@ const OrderDetailModal = forwardRef((props, ref) => {
       <Modal.Header>{`Order #${id}`}</Modal.Header>
       <Modal.Content image>
         <Modal.Description>
-          <div class="order-info">
+          <div className="order-info">
             <Grid container>
               <Grid.Column width={3}>
                 <OrderInforField
