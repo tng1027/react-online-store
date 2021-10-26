@@ -29,10 +29,6 @@ const Header = () => {
       >
         <a href="/store">Store</a>
       </Menu.Item>
-
-      <Menu.Item name="sign-in" onClick={handleItemClick}>
-        Sign-in
-      </Menu.Item>
     </Menu>
   )
 }
