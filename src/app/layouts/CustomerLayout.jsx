@@ -1,5 +1,5 @@
 import { Route } from "react-router"
-import { Container, Grid } from "semantic-ui-react"
+import { Container, Grid, Header } from "semantic-ui-react"
 
 const CustomerLayout = ({ children }) => {
   return (
@@ -7,6 +7,7 @@ const CustomerLayout = ({ children }) => {
       <Grid>
         <Grid.Column width={2}></Grid.Column>
         <Grid.Column width={12}>
+          <Header></Header>
           <Container className="app__content" fluid>
             <Container fluid className="app__content-wrapper">
               {children}

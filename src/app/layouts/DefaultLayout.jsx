@@ -1,7 +1,7 @@
 import { Route } from "react-router"
 import { Container, Grid } from "semantic-ui-react"
 
-const CustomerLayout = ({ children }) => {
+const DefaultLayout = ({ children }) => {
   return (
     <div className="layout__default">
       <Grid>
@@ -19,17 +19,17 @@ const CustomerLayout = ({ children }) => {
   )
 }
 
-const CustomerLayoutRoute = ({ component: Component, ...rest }) => {
+const DefaultLayoutRoute = ({ component: Component, ...rest }) => {
   return (
     <Route
       {...rest}
       render={props => (
-        <CustomerLayout>
+        <DefaultLayout>
           <Component {...props} />
-        </CustomerLayout>
+        </DefaultLayout>
       )}
     />
   )
 }
 
-export default CustomerLayoutRoute
+export default DefaultLayoutRoute

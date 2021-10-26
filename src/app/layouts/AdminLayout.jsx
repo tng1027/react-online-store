@@ -1,5 +1,5 @@
 import { Route } from "react-router-dom"
-import { Container, Grid } from "semantic-ui-react"
+import { Container, Grid, Header } from "semantic-ui-react"
 import LeftSideBar from "./AdminLayout/LeftSideBar"
 import RightSideBar from "./AdminLayout/RightSideBar"
 
@@ -12,6 +12,7 @@ const AdminLayout = ({ children }) => {
           <LeftSideBar></LeftSideBar>
         </Grid.Column>
         <Grid.Column width={8}>
+          <Header></Header>
           <Container className="app__content" fluid>
             <Container fluid className="app__content-wrapper">
               {children}
