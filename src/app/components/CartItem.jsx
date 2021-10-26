@@ -1,4 +1,5 @@
 import { Grid, Header, Icon } from "semantic-ui-react"
+import { formatCurrency } from "./../helpers/number-helper"
 
 const CartItem = ({ item }) => {
   const { name, price, quantity, note } = item
@@ -20,7 +21,7 @@ const CartItem = ({ item }) => {
       </Grid.Column>
       <Grid.Column width={4}>
         <Header size="tiny" className="cart-subtotal">
-          {price * quantity}
+          {formatCurrency(price * quantity)}
         </Header>
       </Grid.Column>
     </Grid.Row>

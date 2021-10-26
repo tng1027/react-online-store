@@ -1,13 +1,13 @@
-import { Modal, Button, Grid } from "semantic-ui-react"
 import { forwardRef, useImperativeHandle, useMemo, useState } from "react"
-import OrderInforField from "./../../../components/OrderInforField"
+import { generateItems, generateOrders } from "../../helpers/fake-data-helper"
+import { Button, Grid, Modal } from "semantic-ui-react"
 import dayjs from "dayjs"
-import { AgGridReact } from "ag-grid-react"
-import { generateItems, generateOrder } from "../../../helpers/fake-data-helper"
+import { AgGridReact } from "ag-grid-react/lib/agGridReact"
+import OrderInforField from "./../../components/OrderInforField"
 
 const OrderDetailModal = forwardRef((props, ref) => {
   const [isOpen, setIsOpen] = useState(false)
-  const [order] = useState(generateOrder())
+  const [order] = useState(generateOrders())
 
   useImperativeHandle(ref, () => ({
     open() {

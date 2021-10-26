@@ -1,6 +1,7 @@
 import { Button, Divider, Header, Label, List } from "semantic-ui-react"
 import { generateKey } from "../helpers/crypto-helper"
 import CartItemGroup from "./CartItemGroup"
+import { formatCurrency, formatPercentage } from "./../helpers/number-helper"
 
 const Cart = ({ cart }) => {
   const { id, groups, subtotal, discount, total } = cart
@@ -13,19 +14,19 @@ const Cart = ({ cart }) => {
         <List.Item>
           Sub-total
           <Label horizontal style={{ float: "right" }}>
-            {subtotal || 0}
+            {formatCurrency(subtotal || 0)}
           </Label>
         </List.Item>
         <List.Item>
           Discount
           <Label horizontal style={{ float: "right" }}>
-            {discount * 100 || 0}
+            {formatPercentage(discount * 100 || 0)}
           </Label>
         </List.Item>
         <List.Item className="total">
           Total
           <Label horizontal style={{ float: "right" }}>
-            {total || 0}
+            {formatCurrency(total || 0)}
           </Label>
         </List.Item>
       </List>

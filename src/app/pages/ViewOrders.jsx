@@ -1,10 +1,10 @@
 import { AgGridReact } from "ag-grid-react"
 import { Header } from "semantic-ui-react"
 import { useMemo, useRef, useState } from "react"
-import OrderDetailModal from "./ViewOrders/OrderDetailModal"
+import { generateOrders } from "../helpers/fake-data-helper"
 import ActionCellRenderer from "./ViewOrders/ActionCellRenderer"
 import StatusCellRenderer from "./ViewOrders/StatusCellRenderer"
-import { generateOrders } from "./../../helpers/fake-data-helper"
+import OrderDetailModal from "./ViewOrders/OrderDetailModal"
 
 const ViewOrders = () => {
   // never changes, so we can use useMemo

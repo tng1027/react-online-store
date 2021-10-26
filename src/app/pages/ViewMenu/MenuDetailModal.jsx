@@ -1,6 +1,6 @@
 import { Modal, Button, Image, Form } from "semantic-ui-react"
 import { forwardRef, useImperativeHandle, useState } from "react"
-import { generateMenuItem } from "./../../../helpers/fake-data-helper"
+import { generateMenuItem } from "../../helpers/fake-data-helper"
 
 const MenuDetailModal = forwardRef((props, ref) => {
   const [isOpen, setIsOpen] = useState(false)

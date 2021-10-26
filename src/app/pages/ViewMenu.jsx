@@ -1,8 +1,8 @@
 import { Header } from "semantic-ui-react"
 import { useRef, useState } from "react"
 import MenuDetailModal from "./ViewMenu/MenuDetailModal"
-import MenuItemList from "./../../components/MenuItemList"
-import { generateMenu } from "../../helpers/fake-data-helper"
+import MenuItemList from "../components/MenuItemList"
+import { generateMenu } from "../helpers/fake-data-helper"
 
 const ViewMenu = () => {
   const [rowData] = useState(generateMenu())
