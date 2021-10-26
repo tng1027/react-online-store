@@ -1,5 +1,5 @@
-import { nanoid } from "nanoid"
 import { Button, Divider, Header, Label, List } from "semantic-ui-react"
+import { generateKey } from "../helpers/crypto-helper"
 import CartItemGroup from "./CartItemGroup"
 
 const Cart = ({ cart }) => {
@@ -40,7 +40,7 @@ const Cart = ({ cart }) => {
       <Divider></Divider>
       {groups &&
         groups.map(group => (
-          <CartItemGroup key={nanoid()} group={group}></CartItemGroup>
+          <CartItemGroup key={generateKey()} group={group}></CartItemGroup>
         ))}
     </>
   )

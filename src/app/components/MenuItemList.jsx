@@ -1,5 +1,5 @@
-import { nanoid } from "nanoid"
 import { List } from "semantic-ui-react"
+import { generateKey } from "../helpers/crypto-helper"
 import MenuItem from "./MenuItem"
 
 const MenuItemList = ({ items, viewOrder, addToCart }) => {
@@ -7,7 +7,7 @@ const MenuItemList = ({ items, viewOrder, addToCart }) => {
     <List size={"large"}>
       {items.map(item => (
         <MenuItem
-          key={nanoid()}
+          key={generateKey()}
           item={item}
           viewOrder={viewOrder}
           addToCart={addToCart}

@@ -2,21 +2,10 @@ import { useRef } from "react"
 import { Button, Image } from "semantic-ui-react"
 import StoreInforField from "../../components/StoreInforField"
 import ModifyStoreModal from "./RightSideBar/ModifyStoreModal"
-import faker from "faker"
-import { nanoid } from "nanoid"
+import { generateStore } from "../../helpers/fake-data-helper"
 
 const RightSideBar = () => {
-  const store = {
-    id: `STR${faker.datatype.number({
-      min: 100000,
-      max: 999999,
-    })}`,
-    link: `link.com/${nanoid()}`,
-    image: `https://source.unsplash.com/random/?food,${faker.datatype.number()}`,
-    name: `${faker.company.companyName()}`,
-    address: `${faker.address.streetAddress()}, ${faker.address.county()}, ${faker.address.city()}, ${faker.address.state()}`,
-    phone: faker.phone.phoneNumber(),
-  }
+  const store = generateStore()
 
   const { id, image, link, name, address, phone } = store
   const modalRef = useRef(null)

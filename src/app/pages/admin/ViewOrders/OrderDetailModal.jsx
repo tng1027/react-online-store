@@ -1,23 +1,13 @@
 import { Modal, Button, Grid } from "semantic-ui-react"
 import { forwardRef, useImperativeHandle, useMemo, useState } from "react"
 import OrderInforField from "./../../../components/OrderInforField"
-import { nanoid } from "nanoid"
-import faker from "faker"
 import dayjs from "dayjs"
 import { AgGridReact } from "ag-grid-react"
+import { generateItems, generateOrder } from "../../../helpers/fake-data-helper"
 
 const OrderDetailModal = forwardRef((props, ref) => {
   const [isOpen, setIsOpen] = useState(false)
-  const [order] = useState({
-    id: nanoid(),
-    orderNumber: `ORD${faker.datatype.number({
-      min: 100000,
-      max: 999999,
-    })}`,
-    orderTime: faker.date.past(),
-    customerName: faker.name.findName(),
-    customerPhone: faker.phone.phoneNumber(),
-  })
+  const [order] = useState(generateOrder())
 
   useImperativeHandle(ref, () => ({
     open() {
@@ -43,24 +33,6 @@ const OrderDetailModal = forwardRef((props, ref) => {
     }),
     []
   )
-
-  const generateItems = () => {
-    const order = []
-    for (let i = 0; i < faker.datatype.number({ min: 1, max: 10 }); i++) {
-      const item = {
-        name: faker.commerce.productName(),
-        id: nanoid(),
-        price: faker.commerce.price(),
-        quantity: faker.datatype.number({ min: 1, max: 10 }),
-        note: `N/A`,
-      }
-
-      item.total = item.quantity * item.price
-
-      order.push(item)
-    }
-    return order
-  }
 
   const [rowData] = useState(generateItems())
 

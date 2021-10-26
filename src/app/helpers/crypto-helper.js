@@ -5,7 +5,7 @@ export const generateId = () => {
   return nanoid()
 }
 
-export const generateKey = (element = "default") => {
+export const generateKey = (element = "ele") => {
   const nanoid = customAlphabet(urlAlphabet, 5)
   return `${element}-${nanoid()}`
 }

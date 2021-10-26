@@ -1,19 +1,10 @@
 import { Modal, Button, Image, Form } from "semantic-ui-react"
 import { forwardRef, useImperativeHandle, useState } from "react"
-import faker from "faker"
+import { generateStore } from "../../../helpers/fake-data-helper"
 
 const ModifyStoreModal = forwardRef((props, ref) => {
   const [isOpen, setIsOpen] = useState(false)
-  const [store] = useState({
-    id: `STR${faker.datatype.number({
-      min: 100000,
-      max: 999999,
-    })}`,
-    image: `https://source.unsplash.com/random/?food,${faker.datatype.number()}`,
-    name: `${faker.company.companyName()}`,
-    address: `${faker.address.streetAddress()}, ${faker.address.county()}, ${faker.address.city()}, ${faker.address.state()}`,
-    phone: faker.phone.phoneNumber(),
-  })
+  const [store] = useState(generateStore())
 
   useImperativeHandle(ref, () => ({
     open() {

@@ -1,17 +1,10 @@
 import { Modal, Button, Image, Form } from "semantic-ui-react"
 import { forwardRef, useImperativeHandle, useState } from "react"
-import faker from "faker"
-import { nanoid } from "nanoid"
+import { generateMenuItem } from "./../../../helpers/fake-data-helper"
 
 const MenuDetailModal = forwardRef((props, ref) => {
   const [isOpen, setIsOpen] = useState(false)
-  const [menu] = useState({
-    image: `https://source.unsplash.com/random/?food`,
-    name: faker.commerce.productName(),
-    id: nanoid(),
-    price: faker.commerce.price(),
-    description: faker.commerce.productDescription(),
-  })
+  const [menu] = useState(generateMenuItem())
 
   useImperativeHandle(ref, () => ({
     open() {
