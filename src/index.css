@@ -4,6 +4,10 @@
     url(./fonts/IBM_Plex_Mono/IBMPlexMono-Regular.ttf) format("truetype");
 }
 
+.fl-right {
+  float: right;
+}
+
 .ui {
   font-size: 100%;
   font-family: "IBM Plex Mono" !important;
@@ -90,6 +94,20 @@ a.hashtag i {
 
 .admin-layout_menu .ui.vertical.menu {
   padding-left: 25px;
+}
+
+/* admin section */
+.section-header .ui.breadcrumb {
+  font-size: 15px;
+  padding-top: 15px;
+}
+
+.section-header button {
+  float: right;
+}
+
+.section-header {
+  margin-bottom: 15px;
 }
 
 /* view menu */

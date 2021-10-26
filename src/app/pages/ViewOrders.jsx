@@ -1,10 +1,10 @@
 import { AgGridReact } from "ag-grid-react"
-import { Header } from "semantic-ui-react"
 import { useMemo, useRef, useState } from "react"
 import { generateOrders } from "../helpers/fake-data-helper"
 import ActionCellRenderer from "./ViewOrders/ActionCellRenderer"
 import StatusCellRenderer from "./ViewOrders/StatusCellRenderer"
 import OrderDetailModal from "./ViewOrders/OrderDetailModal"
+import SectionHeader from "../components/SectionHeader"
 
 const ViewOrders = () => {
   // never changes, so we can use useMemo
@@ -48,7 +48,7 @@ const ViewOrders = () => {
 
   return (
     <>
-      <Header size="medium">View Orders</Header>
+      <SectionHeader title="View Orders"></SectionHeader>
       <div
         className="ag-theme-material grid-order"
         style={{ height: gridHeight - 150 }}

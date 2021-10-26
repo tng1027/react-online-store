@@ -5,7 +5,7 @@ import CustomerLayoutRoute from "./../layouts/CustomerLayout"
 import NotFound from "./../pages/404"
 import ViewOrders from "../pages/ViewOrders"
 import ViewMenu from "./../pages/ViewMenu"
-import DashboardGuest from "./../pages/DashboardGuest"
+import Stores from "../pages/Stores"
 import Store from "../pages/Store"
 
 const Router = () => {
@@ -24,7 +24,7 @@ const Router = () => {
           component={ViewOrders}
         />
         <AdminLayoutRoute exact path="/admin/view-menu" component={ViewMenu} />
-        <CustomerLayoutRoute exact path="/store" component={DashboardGuest} />
+        <CustomerLayoutRoute exact path="/store" component={Stores} />
         <CustomerLayoutRoute exact path="/store/:id" component={Store} />
         <Route path="*">
           <NotFound />

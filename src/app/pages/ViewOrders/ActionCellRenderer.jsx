@@ -8,7 +8,8 @@ const ActionCellRenderer = props => {
     <Button
       icon
       labelPosition="left"
-      color="green"
+      color="blue"
+      size="tiny"
       onClick={() => onViewOrder(id)}
       title="View Order"
     >
