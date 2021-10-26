@@ -1,7 +1,6 @@
-import { Modal, Button, Image, Header, Form, Checkbox } from "semantic-ui-react"
+import { Modal, Button, Image, Form } from "semantic-ui-react"
 import { forwardRef, useImperativeHandle, useState } from "react"
 import faker from "faker"
-import { nanoid } from "nanoid"
 
 const ModifyStoreModal = forwardRef((props, ref) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -22,7 +21,7 @@ const ModifyStoreModal = forwardRef((props, ref) => {
     },
   }))
 
-  const { id, name, address, phone, image } = store
+  const { name, address, phone, image } = store
 
   return (
     <Modal

@@ -1,4 +1,4 @@
-import { Modal, Button, Image, Header, Form, Checkbox } from "semantic-ui-react"
+import { Modal, Button, Image, Form } from "semantic-ui-react"
 import { forwardRef, useImperativeHandle, useState } from "react"
 import faker from "faker"
 import { nanoid } from "nanoid"

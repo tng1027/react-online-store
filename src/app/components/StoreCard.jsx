@@ -17,9 +17,7 @@ const StoreCard = ({ store }) => {
         <Card.Description>{brief}</Card.Description>
       </Card.Content>
       <Card.Content extra>
-        <a>
-          <Icon name="phone"></Icon> {phoneNumber}
-        </a>
+        <Icon name="phone"></Icon> {phoneNumber}
       </Card.Content>
     </Card>
   )

@@ -73,11 +73,7 @@ const Store = () => {
   const [items] = useState(menuFake)
   const [cart] = useState(cartFake)
 
-  console.log(cart)
-
-  const addToCart = id => {
-    console.log(`add item ${id}`)
-  }
+  const addToCart = id => {}
 
   return (
     <>

@@ -1,7 +1,7 @@
-import { Button, Container, Grid, Header, Icon, Label } from "semantic-ui-react"
+import { Grid, Header, Icon } from "semantic-ui-react"
 
 const CartItem = ({ item }) => {
-  const { id, name, price, quantity, note } = item
+  const { name, price, quantity, note } = item
   return (
     <Grid.Row columns={4}>
       <Grid.Column width={1}>

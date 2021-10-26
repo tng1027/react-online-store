@@ -25,13 +25,9 @@ const RightSideBar = () => {
     modalRef.current.open(id)
   }
 
-  const share = () => {
-    console.log(link)
-  }
+  const share = () => {}
 
-  const copy = () => {
-    console.log(link)
-  }
+  const copy = () => {}
 
   return (
     <div className="admin-layout_side-bar">

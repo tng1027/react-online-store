@@ -4,7 +4,7 @@ import CartItemGroup from "./CartItemGroup"
 
 const Cart = ({ cart }) => {
   const { id, groups, subtotal, discount, total } = cart
-  console.log({ id, groups, subtotal, discount, total })
+
   return (
     <>
       <Header>Cart {id}</Header>
