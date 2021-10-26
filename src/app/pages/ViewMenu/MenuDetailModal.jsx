@@ -75,14 +75,14 @@ const MenuDetailModal = forwardRef((props, ref) => {
                       {image || "Please select image"}
                     </Label>
                   </Button>
+                  <input
+                    style={{ display: "none" }}
+                    type="file"
+                    ref={inputFileRef}
+                    onChange={chooseFile}
+                    accept="image/*"
+                  />
                 </Form.Field>
-                <input
-                  style={{ display: "none" }}
-                  type="file"
-                  ref={inputFileRef}
-                  onChange={chooseFile}
-                  accept="image/*"
-                />
               </Form>
             </Modal.Description>
           </>

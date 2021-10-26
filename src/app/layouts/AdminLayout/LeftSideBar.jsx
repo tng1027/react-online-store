@@ -16,6 +16,12 @@ const LeftSideBar = () => {
             <Icon name="list alternate outline" /> Menu
           </Link>
         </Menu.Item>
+
+        {/* <Menu.Item name="menu">
+          <Link to="/admin/view-menu">
+            <Icon name="list alternate outline" /> Menu
+          </Link>
+        </Menu.Item> */}
       </Menu>
     </div>
   )

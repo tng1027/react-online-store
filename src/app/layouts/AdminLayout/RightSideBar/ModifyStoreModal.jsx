@@ -1,16 +1,26 @@
-import { Modal, Button, Image, Form } from "semantic-ui-react"
-import { forwardRef, useImperativeHandle, useState } from "react"
+import { Modal, Button, Image, Form, Icon, Label } from "semantic-ui-react"
+import { forwardRef, useImperativeHandle, useRef, useState } from "react"
 import { generateStore } from "../../../helpers/fake-data-helper"
 
 const ModifyStoreModal = forwardRef((props, ref) => {
   const [isOpen, setIsOpen] = useState(false)
   const [store] = useState(generateStore())
+  const inputFileRef = useRef(null)
 
   useImperativeHandle(ref, () => ({
     open() {
       setIsOpen(true)
     },
   }))
+
+  const chooseFile = e => {
+    /*Selected files data can be collected here.*/
+    console.log(e.target.files)
+  }
+  const requestChooseFile = () => {
+    /*Collecting node-element and performing click*/
+    inputFileRef.current.click()
+  }
 
   const { name, address, phone, image } = store
 
@@ -21,7 +31,7 @@ const ModifyStoreModal = forwardRef((props, ref) => {
       open={isOpen}
       className="store-modify-modal"
     >
-      <Modal.Header>Modify Store</Modal.Header>
+      <Modal.Header>Modify Store Information</Modal.Header>
       <Modal.Content image>
         <Image rounded fluid src={image} wrapped />
         <Modal.Description>
@@ -37,6 +47,28 @@ const ModifyStoreModal = forwardRef((props, ref) => {
             <Form.Field>
               <label>Address</label>
               <input placeholder="Address" value={address} />
+            </Form.Field>
+            <Form.Field>
+              <Button
+                as="div"
+                labelPosition="right"
+                onClick={requestChooseFile}
+              >
+                <Button>
+                  <Icon name="upload" />
+                  Upload File
+                </Button>
+                <Label basic pointing="left">
+                  {image || "Please select image"}
+                </Label>
+              </Button>
+              <input
+                style={{ display: "none" }}
+                type="file"
+                ref={inputFileRef}
+                onChange={chooseFile}
+                accept="image/*"
+              />
             </Form.Field>
           </Form>
         </Modal.Description>

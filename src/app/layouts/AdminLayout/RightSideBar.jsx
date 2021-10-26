@@ -10,7 +10,7 @@ const RightSideBar = () => {
   const { id, image, link, name, address, phone } = store
   const modalRef = useRef(null)
 
-  const viewOrder = id => {
+  const viewShopProfile = id => {
     modalRef.current.open(id)
   }
 
@@ -20,7 +20,13 @@ const RightSideBar = () => {
 
   return (
     <div className="admin-layout_side-bar">
-      <Image src={image} fluid rounded onClick={viewOrder} target="_blank" />
+      <Image
+        src={image}
+        fluid
+        rounded
+        onClick={viewShopProfile}
+        target="_blank"
+      />
 
       <StoreInforField
         icon="linkify"
@@ -47,7 +53,7 @@ const RightSideBar = () => {
         labelPosition="left"
         icon="share alternate"
         onClick={share}
-        color="blue"
+        color="green"
         style={{ marginTop: 15, width: "100%" }}
       />
 
@@ -57,6 +63,16 @@ const RightSideBar = () => {
         labelPosition="left"
         icon="linkify"
         onClick={copy}
+        color="brown"
+        style={{ marginTop: 15, width: "100%" }}
+      />
+
+      <Button
+        basic
+        content="Edit Profile"
+        labelPosition="left"
+        icon="briefcase"
+        onClick={viewShopProfile}
         color="blue"
         style={{ marginTop: 15, width: "100%" }}
       />
