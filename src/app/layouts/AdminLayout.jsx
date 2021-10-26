@@ -7,10 +7,11 @@ const AdminLayout = ({ children }) => {
   return (
     <div className="admin-layout">
       <Grid>
+        <Grid.Column width={1}></Grid.Column>
         <Grid.Column width={3}>
           <LeftSideBar></LeftSideBar>
         </Grid.Column>
-        <Grid.Column width={10}>
+        <Grid.Column width={8}>
           <Container className="app__content" fluid>
             <Container fluid className="app__content-wrapper">
               {children}
@@ -20,6 +21,7 @@ const AdminLayout = ({ children }) => {
         <Grid.Column width={3}>
           <RightSideBar></RightSideBar>
         </Grid.Column>
+        <Grid.Column width={1}></Grid.Column>
       </Grid>
     </div>
   )
