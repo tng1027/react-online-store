@@ -14,8 +14,7 @@ const HeaderGuest = () => {
         active={activeItem === "profile"}
         onClick={() => history.push("/profile")}
       >
-        <Icon name="user" />
-        Profile
+        <Icon size={"small"} name="user" /> Profile
       </Menu.Item>
       <Menu.Item onClick={() => history.push("/store")}>
         <Image src="/logo/logo32.png" />
@@ -25,8 +24,7 @@ const HeaderGuest = () => {
         active={activeItem === "logoff"}
         onClick={() => history.push("/sign-in")}
       >
-        <Icon name="log out" />
-        Sign Out
+        <Icon size={"small"} name="log out" /> Sign Out
       </Menu.Item>
       <Menu.Item></Menu.Item>
     </Menu>

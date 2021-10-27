@@ -1,5 +1,6 @@
 import { useHistory } from "react-router"
 import { useState } from "react"
+import useToast from "./../hooks/useToast"
 import {
   Button,
   Image,
@@ -15,13 +16,24 @@ import {
 const Login = () => {
   const history = useHistory()
   const [isShop, setIsShop] = useState(true)
+  const { toastSuccess } = useToast()
 
-  const signUp = () => {
+  const signIn = () => {
     history.push("/sign-in")
   }
 
   const toggleView = () => {
     setIsShop(!isShop)
+  }
+
+  const submit = () => {
+    toastSuccess("Create account successfully")
+
+    if (isShop) {
+      history.push("/admin")
+    } else {
+      history.push("/")
+    }
   }
 
   const label = isShop
@@ -50,7 +62,7 @@ const Login = () => {
                 <label>Phone Number</label>
                 <input placeholder="Phone Number" />
               </Form.Field>
-              <Button type="submit" color="green" fluid>
+              <Button type="submit" color="green" fluid onClick={submit}>
                 Register
               </Button>
             </Form>
@@ -61,7 +73,7 @@ const Login = () => {
               basic
               style={{ width: "100%" }}
               color="grey"
-              onClick={signUp}
+              onClick={signIn}
             >
               <Icon name="user" /> Already a member. Sign In
             </Label>

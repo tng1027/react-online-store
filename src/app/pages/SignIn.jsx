@@ -28,7 +28,12 @@ const Login = () => {
 
   const submit = () => {
     toastSuccess("Log in successfully")
-    history.push("/")
+
+    if (isShop) {
+      history.push("/admin")
+    } else {
+      history.push("/")
+    }
   }
 
   const label = isShop ? "Sign in as customer?" : "Sign in as store owner?"

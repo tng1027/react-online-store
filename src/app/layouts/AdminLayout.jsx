@@ -7,13 +7,13 @@ import HeaderAdmin from "./../components/HeaderAdmin"
 const AdminLayout = ({ children }) => {
   return (
     <div className="admin-layout">
+      <HeaderAdmin></HeaderAdmin>
       <Grid>
         <Grid.Column width={1}></Grid.Column>
         <Grid.Column width={3}>
           <LeftSideBar></LeftSideBar>
         </Grid.Column>
         <Grid.Column width={8}>
-          <HeaderAdmin></HeaderAdmin>
           <Container className="app__content" fluid>
             <Container fluid className="app__content-wrapper">
               {children}

@@ -1,5 +1,5 @@
 import { Route } from "react-router"
-import { Container, Grid, Header } from "semantic-ui-react"
+import { Container, Grid } from "semantic-ui-react"
 import HeaderGuest from "./../components/HeaderGuest"
 
 const CustomerLayout = ({ children }) => {
