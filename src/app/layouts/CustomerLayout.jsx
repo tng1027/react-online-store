@@ -1,5 +1,6 @@
 import { Route } from "react-router"
 import { Container, Grid, Header } from "semantic-ui-react"
+import HeaderGuest from "./../components/HeaderGuest"
 
 const CustomerLayout = ({ children }) => {
   return (
@@ -7,7 +8,7 @@ const CustomerLayout = ({ children }) => {
       <Grid>
         <Grid.Column width={2}></Grid.Column>
         <Grid.Column width={12}>
-          <Header></Header>
+          <HeaderGuest></HeaderGuest>
           <Container className="app__content" fluid>
             <Container fluid className="app__content-wrapper">
               {children}

@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Image, Menu } from "semantic-ui-react"
 
-const Header = () => {
+const HeaderAdmin = () => {
   const [activeItem, setActiveItem] = useState(null)
 
   const handleItemClick = name => {
@@ -33,4 +33,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default HeaderAdmin
