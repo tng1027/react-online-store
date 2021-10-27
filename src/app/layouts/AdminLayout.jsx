@@ -1,8 +1,8 @@
 import { Route } from "react-router-dom"
-import { Container, Grid, Header } from "semantic-ui-react"
+import { Container, Grid } from "semantic-ui-react"
 import LeftSideBar from "./AdminLayout/LeftSideBar"
 import RightSideBar from "./AdminLayout/RightSideBar"
-import HeaderAdmin from './../components/HeaderAdmin';
+import HeaderAdmin from "./../components/HeaderAdmin"
 
 const AdminLayout = ({ children }) => {
   return (
