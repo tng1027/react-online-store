@@ -5,11 +5,11 @@ import reportWebVitals from "./reportWebVitals"
 import { Provider } from "react-redux"
 import configureStore from "./app/store/store"
 
-import "semantic-ui-css/semantic.min.css"
-import "./index.css"
+import "./app/plugins/semantic-ui"
+import "./app/plugins/ag-grid"
+import "./app/plugins/toastify"
 
-import "ag-grid-community/dist/styles/ag-grid.css"
-import "ag-grid-community/dist/styles/ag-theme-alpine.css"
+import "./index.css"
 
 ReactDOM.render(
   <Provider store={configureStore()}>

@@ -4,22 +4,7 @@ import { Icon, Image, Menu } from "semantic-ui-react"
 
 const HeaderGuest = () => {
   const history = useHistory()
-  const [activeItem, setActiveItem] = useState(null)
-
-  const handleItemClick = name => {
-    switch (activeItem) {
-      case "logoff":
-        // do clear authentication token
-        history.push("/sign-in")
-        break
-      case "profile":
-        break
-      default:
-        break
-    }
-
-    setActiveItem(name)
-  }
+  const [activeItem] = useState(null)
 
   return (
     <Menu className="header" pointing secondary widths={5}>
@@ -27,7 +12,7 @@ const HeaderGuest = () => {
       <Menu.Item
         name="profile"
         active={activeItem === "profile"}
-        onClick={() => handleItemClick("profile")}
+        onClick={() => history.push("/profile")}
       >
         <Icon name="user" />
         Profile
@@ -38,7 +23,7 @@ const HeaderGuest = () => {
       <Menu.Item
         name="logoff"
         active={activeItem === "logoff"}
-        onClick={() => handleItemClick("logoff")}
+        onClick={() => history.push("/sign-in")}
       >
         <Icon name="log out" />
         Sign Out

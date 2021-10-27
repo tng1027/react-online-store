@@ -1,5 +1,6 @@
 import { useHistory } from "react-router"
 import { useState } from "react"
+import useToast from "./../hooks/useToast"
 import {
   Button,
   Image,
@@ -15,6 +16,7 @@ import {
 const Login = () => {
   const history = useHistory()
   const [isShop, setIsShop] = useState(true)
+  const { toastSuccess } = useToast()
 
   const signUp = () => {
     history.push("/sign-up")
@@ -22,6 +24,11 @@ const Login = () => {
 
   const toggleView = () => {
     setIsShop(!isShop)
+  }
+
+  const submit = () => {
+    toastSuccess("Log in successfully")
+    history.push("/")
   }
 
   const label = isShop ? "Sign in as customer?" : "Sign in as store owner?"
@@ -43,7 +50,7 @@ const Login = () => {
                 <label>Phone Number</label>
                 <input placeholder="Phone Number" />
               </Form.Field>
-              <Button type="submit" color="green" fluid>
+              <Button type="submit" color="green" fluid onClick={submit}>
                 Submit
               </Button>
             </Form>
